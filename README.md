@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kaizen Docs
 
-## Getting Started
+**The public product report for [Kaizen](https://github.com/devvbuilds-png/Orchestral-AI): what it is, why it exists, how it's built, and where it's going.**
 
-First, run the development server:
+Live: https://kaizen-docs.vercel.app
+
+## What it is / why I built it
+
+Kaizen is a structured product knowledge base, and the product itself is hard to explain in a single landing-page headline. I wanted one place where someone (a recruiter, a collaborator, or a curious builder) could follow the whole story: the problem, the architecture, the honest trade-offs, and the roadmap.
+
+This site is that place. It's written as a builder's report rather than marketing copy, with a short, readable page for each part of the story.
+
+## Pages
+
+| # | Route | Content |
+|---|-------|---------|
+| 01 | `/` | What is Kaizen |
+| 02 | `/why` | The problem worth solving |
+| 03 | `/build` | How it's built: pipeline, agents, stack, known gaps and debt |
+| 04 | `/story` | How it started |
+| 05 | `/roadmap` | What's live, in progress, and planned |
+
+## Features
+
+- Sidebar navigation with an active-page state and a mobile hamburger menu
+- Reusable `StatusTable` component for live, in-progress and planned items on the roadmap
+- Serif and mono type pairing (Lora + IBM Plex Mono via `next/font`)
+- Static pages with no backend and no environment variables
+
+## Tech stack
+
+- Next.js 14 (App Router), React 18, TypeScript
+- Tailwind CSS
+- Deployed on Vercel
+
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run build`, `npm start` and `npm run lint` are also available.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/          one folder per page (why, build, story, roadmap) + root layout and styles
+components/   Sidebar, StatusTable
+```
 
-## Learn More
+## Status
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Live on Vercel; updated as Kaizen ships.
